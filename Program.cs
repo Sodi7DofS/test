@@ -40,7 +40,7 @@ namespace TestPlugin
         {
             Timing.CallDelayed(5f, () 
             {
-                if (sender is PlayerCommandSender player and Player.SeveredHands == false)
+                if (sender is PlayerCommandSender player and Player.IsCuffed == false) //не знаю как получить состояние рук игрока (связанны или нет), так что пусть будет так 
                 {
                     response = $"Ударил";
                     PlayerB.hp -= 20; //в задании не сказано как мы получаем избиваемого игрока, поэтому эта строчка условна
