@@ -15,7 +15,7 @@ namespace fight
         if (ev.Name.ToLower() != "fight") return;
         var player = Player.Get.OrderBy(p => p.DistanceSqr(ev.Player)).FirstOrDefault();
         if (player == null) return;
-        player.Hurt(15, ev.Player);
+        player.Hurt(Damage, ev.Player);
         ev.ReturnMessage = $"You have hitted {player.Nickname}.";
         return;
     }
