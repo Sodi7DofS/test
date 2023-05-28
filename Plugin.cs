@@ -1,4 +1,4 @@
-﻿using Exiled.API.Features;
+using Exiled.API.Features;
 using Exiled.Events;
 
 namespace fight
@@ -15,7 +15,7 @@ namespace fight
         if (ev.Name.ToLower() != "fight") return;
         var player = Player.Get.OrderBy(p => p.DistanceSqr(ev.Player)).FirstOrDefault();
         if (player == null) return;
-        player.Hurt(Damage, ev.Player);
+        player.Hurt(Config.Damage, ev.Player);
         ev.ReturnMessage = $"You have hitted {player.Nickname}.";
         return;
     }
